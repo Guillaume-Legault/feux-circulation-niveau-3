@@ -63,7 +63,7 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (Pieton == 1 && Attente_pieton == 1) {
-    	
+        Cycle_lumière()
     } else if (Pieton == 1 && debut_cycle_lumiere == 0) {
         Cycle_pieton()
         Pieton = 0
