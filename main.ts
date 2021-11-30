@@ -43,7 +43,6 @@ let fin_cycle_lumiere = 0
 let debut_cycle_pieton = 0
 let debut_cycle_lumiere = 0
 let Pieton = 0
-radio.setGroup(16)
 Pieton = 0
 debut_cycle_lumiere = 0
 debut_cycle_pieton = 0
