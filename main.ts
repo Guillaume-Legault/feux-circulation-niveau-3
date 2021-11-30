@@ -30,9 +30,11 @@ function Cycle_lumière () {
     pins.digitalWritePin(DigitalPin.P1, 1)
     basic.pause(5000)
     pins.digitalWritePin(DigitalPin.P1, 0)
-    pins.digitalWritePin(DigitalPin.P2, 1)
-    basic.pause(10000)
-    pins.digitalWritePin(DigitalPin.P2, 0)
+    if (Pieton == 0) {
+        pins.digitalWritePin(DigitalPin.P2, 1)
+        basic.pause(10000)
+        pins.digitalWritePin(DigitalPin.P2, 0)
+    }
     debut_cycle_lumiere = 0
     fin_cycle_lumiere = 1
     basic.pause(100)
