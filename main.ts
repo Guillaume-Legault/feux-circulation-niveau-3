@@ -21,6 +21,7 @@ input.onButtonPressed(Button.A, function () {
     Pieton = 1
 })
 function Cycle_lumière () {
+    Attente_pieton = 0
     fin_cycle_lumiere = 0
     debut_cycle_lumiere = 1
     pins.digitalWritePin(DigitalPin.P8, 1)
@@ -31,6 +32,7 @@ function Cycle_lumière () {
     basic.pause(5000)
     pins.digitalWritePin(DigitalPin.P1, 0)
     if (Pieton == 0) {
+        Attente_pieton = 1
         pins.digitalWritePin(DigitalPin.P2, 1)
         basic.pause(10000)
         pins.digitalWritePin(DigitalPin.P2, 0)
@@ -40,6 +42,7 @@ function Cycle_lumière () {
     basic.pause(100)
 }
 let temps = 0
+let Attente_pieton = 0
 let fin_cycle_pieton = 0
 let fin_cycle_lumiere = 0
 let debut_cycle_pieton = 0
@@ -59,7 +62,9 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-    if (Pieton == 1 && debut_cycle_lumiere == 0) {
+    if (Pieton == 1 && Attente_pieton == 1) {
+    	
+    } else if (Pieton == 1 && debut_cycle_lumiere == 0) {
         Cycle_pieton()
         Pieton = 0
     } else if (Pieton == 0 && debut_cycle_pieton == 0) {
